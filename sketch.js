@@ -70,5 +70,53 @@ function draw() {
       vertex(x, y);
     }
     endShape(CLOSE);
+
+    // 利用line指令，依照 indices3 連線（藍色線段）
+    const indices3 = [243,190,56,28,27,29,30,247,130,25,110,24,23,22,26,112];
+    stroke(0, 0, 255); // 藍色線
+    strokeWeight(2);
+    for (let i = 0; i < indices3.length - 1; i++) {
+      const idxA = indices3[i];
+      const idxB = indices3[i + 1];
+      const [x1, y1] = keypoints[idxA];
+      const [x2, y2] = keypoints[idxB];
+      line(x1, y1, x2, y2);
+    }
+
+    // 利用line指令，依照 indices4 連線
+    const indices4 = [133,173,157,158,159,160,161,246,33,7,163,144,145,153,154,155];
+    stroke(255, 255, 0); // 黃色線
+    strokeWeight(2);
+    for (let i = 0; i < indices4.length - 1; i++) {
+      const idxA = indices4[i];
+      const idxB = indices4[i + 1];
+      const [x1, y1] = keypoints[idxA];
+      const [x2, y2] = keypoints[idxB];
+      line(x1, y1, x2, y2);
+    }
+
+    // 右眼外圈：藍綠色線段
+    const rightEyeOuter = [359,467,260,259,257,258,286,414,463,341,256,252,253,254,339,255];
+    stroke(0, 255, 255); // 藍綠色
+    strokeWeight(2);
+    for (let i = 0; i < rightEyeOuter.length - 1; i++) {
+      const idxA = rightEyeOuter[i];
+      const idxB = rightEyeOuter[i + 1];
+      const [x1, y1] = keypoints[idxA];
+      const [x2, y2] = keypoints[idxB];
+      line(x1, y1, x2, y2);
+    }
+
+    // 右眼內圈：紫色線段
+    const rightEyeInner = [263,466,388,387,386,385,384,398,362,382,381,380,374,373,390,249];
+    stroke(128, 0, 128); // 紫色線
+    strokeWeight(2);
+    for (let i = 0; i < rightEyeInner.length - 1; i++) {
+      const idxA = rightEyeInner[i];
+      const idxB = rightEyeInner[i + 1];
+      const [x1, y1] = keypoints[idxA];
+      const [x2, y2] = keypoints[idxB];
+      line(x1, y1, x2, y2);
+    }
   }
 }
