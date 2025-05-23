@@ -41,10 +41,10 @@ function draw() {
     }
     endShape();
 
-    // 再畫第二組紅色線並填滿黃色
+    // 再畫第二組紅色線並填滿藍色
     stroke(255, 0, 0);
     strokeWeight(2);
-    fill(255, 255, 0, 200); // 半透明黃色
+    fill(0, 0, 255, 200); // 半透明藍色
     beginShape();
     for (let i = 0; i < indices2.length; i++) {
       const idx = indices2[i];
